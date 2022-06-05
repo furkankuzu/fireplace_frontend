@@ -1,1 +1,39 @@
-<p>header works!</p>
+<header class="navbar">
+  <div class="container p-4 text-center">
+    <div class="grid grid-cols-2 justify-between items-center">
+      <div class="w-20 items-center ml-4">
+        <a routerLink="">
+          <img src="../../../assets/images/logo.png" alt="" />
+        </a>
+      </div>
+      <ul class="hidden lg:flex gap-4 justify-end mr-8">
+        <li class="active"><a routerLink="">Home</a></li>
+        <li><a routerLink="/products">Products</a></li>
+        <li><a routerLink="/about">About</a></li>
+        <li><a routerLink="/contact">Contact</a></li>
+      </ul>
+      <div id="sidebar" class="lg:hidden">
+        <div
+          class="space-y-2 float-right mr-4 cursor-pointer"
+          (click)="toggleSidebar()"
+        >
+          <span class="block w-8 h-0.5 bg-gray-900"></span>
+          <span class="block w-8 h-0.5 bg-gray-900"></span>
+          <span class="block w-8 h-0.5 bg-gray-900"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div [ngClass]="{ expandable: menuIsOpen, deneme: !menuIsOpen }">
+  <div class="grid">
+    <ul class="flex flex-col gap-4 row-end-auto items-center">
+      <li class="text-3xl">
+        <a routerLink="" (click)="toggleSidebar()">Home</a>
+      </li>
+      <li><a routerLink="/products">Products</a></li>
+      <li><a routerLink="/about">About</a></li>
+      <li><a routerLink="/contact">Contact</a></li>
+    </ul>
+  </div>
+</div>
